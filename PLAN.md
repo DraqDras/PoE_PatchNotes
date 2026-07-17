@@ -41,12 +41,12 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 - [x] 01. The Curse of the Allflame Challenge League (10)
 - [x] 02. New Content and Features (25)
 - [x] 03. Mercenaries of Trarthus as a Core League (18)
-- [ ] 04. Abyss Revamp (34)
-- [ ] 05. Legion Revamp (52)
-- [ ] 06. Gem Socket Changes (31)
-- [ ] 07. Talisman Revamp (19)
-- [ ] 08. League Changes (8)
-- [ ] 09. Betrayal (6)
+- [x] 04. Abyss Revamp (34)
+- [x] 05. Legion Revamp (52)
+- [x] 06. Gem Socket Changes (31)
+- [x] 07. Talisman Revamp (19)
+- [x] 08. League Changes (8)
+- [x] 09. Betrayal (6)
 - [ ] 10. Breach (12)
 - [ ] 11. Endgame Changes (21)
 - [ ] 12. Atlas Passive Tree Changes (4)
@@ -66,11 +66,11 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 - [ ] 26. Bug Fixes (42)
 
 ## 6. Publikacja
-- [~] `git init`, pierwszy commit
-- [ ] Utworzyć publiczne repo na GitHub (`DraqDras/PoE_PatchNotes`)
-- [ ] `git push`
-- [ ] Włączyć GitHub Pages (branch `main`, `/root`) — darmowa strona do odczytu
-- [ ] Zweryfikować działanie opublikowanej strony
+- [x] `git init`, pierwszy commit
+- [x] Utworzyć publiczne repo na GitHub (`DraqDras/PoE_PatchNotes`)
+- [x] `git push`
+- [x] Włączyć GitHub Pages (branch `main`, `/root`) — darmowa strona do odczytu
+- [ ] Zweryfikować działanie opublikowanej strony → https://draqdras.github.io/PoE_PatchNotes/
 
 ## 7. Dokumentacja
 - [ ] Zaktualizować wiki projektu (`workspaceDocs/PoE_PatchNotes/`)
