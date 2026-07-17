@@ -8,12 +8,15 @@ Oryginał angielski i tłumaczenie na język polski wyświetlane obok siebie, wi
 
 ## Funkcje
 - **Układ dwukolumnowy** — PL i EN obok siebie; każdy przetłumaczony akapit odpowiada oryginałowi w tym samym wierszu.
-- **Ukrywanie kolumny** (EN lub PL) — skupienie na jednym języku.
-- **Klik w kolumnę = wyróżnienie** — aktywna kolumna jest jaśniejsza, druga wyszarzona (łatwiejsze czytanie).
+- **Ukrywanie kolumny** (EN lub PL) — przyciski z ikoną oka (widoczna / przekreślona); skupienie na jednym języku.
+- **Klik w kolumnę = wyróżnienie** — aktywna kolumna ma jaśniejszy (ciepły) tekst, druga jest wyszarzona. Domyślnie wyróżniony jest polski.
 - **Zamiana kolumn miejscami** — dowolna strona po lewej/prawej.
 - **Kopiowanie treści komórki** jednym kliknięciem (przycisk ⧉ w każdej komórce).
-- **Spis treści** u góry + **stałe menu kotwic** po prawej stronie ekranu (z podświetlaniem aktywnej sekcji).
+- **Oznaczanie ważnych komórek** — checkbox pod przyciskiem kopiowania nadaje komórce jasną ramkę; wybór jest zapamiętywany w plikach cookie.
+- **Spis treści** u góry w formie tabeli PL/EN (klik w wiersz przenosi do sekcji) + **zwijane menu kotwic** po prawej stronie ekranu (z podświetlaniem aktywnej sekcji).
 - Ciemny motyw w klimacie dodatku, responsywność (na telefonie kolumny jedna pod drugą).
+
+> **Cookies:** strona zapisuje w plikach cookie wyłącznie listę oznaczonych przez Ciebie komórek oraz potwierdzenie tej informacji. Brak śledzenia i brak udostępniania danych.
 
 ## Zasady tłumaczenia
 Gra jest dostępna wyłącznie po angielsku, dlatego **nazwy własne pozostają w oryginale** — przedmioty,

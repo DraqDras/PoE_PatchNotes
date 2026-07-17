@@ -78,9 +78,9 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 - [ ] Zaktualizować wiki projektu (`workspaceDocs/PoE_PatchNotes/`)
 
 ## 8. Dodatkowe funkcje (etap 2)
-- [ ] Domyślny focus na kolumnie polskiej
-- [ ] Kolor aktywnego (wyróżnionego) tekstu = `#ffd7a5`
-- [ ] Ikona oka (eye / eye-slash) na przyciskach Polski / English (toggle widoczności)
-- [ ] Spis treści w formie tabeli PL/EN; klik w dowolny wiersz przenosi do sekcji
-- [ ] Boczne menu „Sekcje" — zwijanie/rozwijanie (ikona arrow-left-right)
-- [ ] Oznaczanie ważnych komórek checkboxem (jasna ramka) + zapis w cookies + notka o cookies
+- [x] Domyślny focus na kolumnie polskiej
+- [x] Kolor aktywnego (wyróżnionego) tekstu = `#ffd7a5`
+- [x] Ikona oka (eye / eye-slash) na przyciskach Polski / English (toggle widoczności)
+- [x] Spis treści w formie tabeli PL/EN; klik w dowolny wiersz przenosi do sekcji
+- [x] Boczne menu „Sekcje" — zwijanie/rozwijanie (ikona arrow-left-right)
+- [x] Oznaczanie ważnych komórek checkboxem (jasna ramka) + zapis w cookies + notka o cookies
