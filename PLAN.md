@@ -72,10 +72,10 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 - [x] Utworzyć publiczne repo na GitHub (`DraqDras/PoE_PatchNotes`)
 - [x] `git push`
 - [x] Włączyć GitHub Pages (branch `main`, `/root`) — darmowa strona do odczytu
-- [ ] Zweryfikować działanie opublikowanej strony → https://draqdras.github.io/PoE_PatchNotes/
+- [x] Zweryfikować działanie opublikowanej strony → https://draqdras.github.io/PoE_PatchNotes/
 
 ## 7. Dokumentacja
-- [ ] Zaktualizować wiki projektu (`workspaceDocs/PoE_PatchNotes/`)
+- [x] Zaktualizować wiki projektu (`workspaceDocs/PoE_PatchNotes/`)
 
 ## 8. Dodatkowe funkcje (etap 2)
 - [x] Domyślny focus na kolumnie polskiej
