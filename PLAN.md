@@ -57,13 +57,15 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 - [x] 17. Vaal Gem Changes (8)
 - [x] 18. Support Gem Changes (13)
 - [x] 19. Unique Item Changes (49)
-- [ ] 20. Item Changes (97)
-- [ ] 21. Divination Card Changes (5)
-- [ ] 22. Ruthless-specific Changes (4)
-- [ ] 23. Monster Changes (3)
-- [ ] 24. Quest Reward Changes (3)
-- [ ] 25. User Interface and Quality of Life Changes (11)
-- [ ] 26. Bug Fixes (42)
+- [x] 20. Item Changes (97)
+- [x] 21. Divination Card Changes (5)
+- [x] 22. Ruthless-specific Changes (4)
+- [x] 23. Monster Changes (3)
+- [x] 24. Quest Reward Changes (3)
+- [x] 25. User Interface and Quality of Life Changes (11)
+- [x] 26. Bug Fixes (42)
+
+**✅ Wszystkie 26 sekcji przetłumaczone (640 linii, EN + PL kompletne).**
 
 ## 6. Publikacja
 - [x] `git init`, pierwszy commit
@@ -74,3 +76,11 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 
 ## 7. Dokumentacja
 - [ ] Zaktualizować wiki projektu (`workspaceDocs/PoE_PatchNotes/`)
+
+## 8. Dodatkowe funkcje (etap 2)
+- [ ] Domyślny focus na kolumnie polskiej
+- [ ] Kolor aktywnego (wyróżnionego) tekstu = `#ffd7a5`
+- [ ] Ikona oka (eye / eye-slash) na przyciskach Polski / English (toggle widoczności)
+- [ ] Spis treści w formie tabeli PL/EN; klik w dowolny wiersz przenosi do sekcji
+- [ ] Boczne menu „Sekcje" — zwijanie/rozwijanie (ikona arrow-left-right)
+- [ ] Oznaczanie ważnych komórek checkboxem (jasna ramka) + zapis w cookies + notka o cookies
