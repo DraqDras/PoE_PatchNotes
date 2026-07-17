@@ -84,6 +84,30 @@ body{
 .header-meta .source:hover{ border-bottom-color:var(--accent); }
 .header-meta .updated{ color:var(--muted); }
 
+/* autor + social */
+.author{ display:flex; flex-direction:column; align-items:flex-end; gap:8px; margin-bottom:4px; }
+.by{ font-size:.82rem; color:var(--muted); }
+.by strong{ color:#f2f7f8; font-weight:700; letter-spacing:.02em; }
+.socials{ display:flex; gap:8px; }
+.social-btn{
+  display:inline-flex; align-items:center; gap:7px; text-decoration:none;
+  font-size:.8rem; font-weight:700; color:#fff; padding:6px 12px; border-radius:8px;
+  transition:transform .12s, box-shadow .12s, background .12s;
+}
+.social-btn .ico{ display:inline-flex; }
+.social-btn .ico svg{ width:16px; height:16px; display:block; }
+.social-btn:hover{ transform:translateY(-1px); box-shadow:0 5px 16px rgba(0,0,0,.45); }
+.social-btn:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+.social-btn.youtube{ background:#e60023; }
+.social-btn.youtube:hover{ background:#ff1f2e; }
+.social-btn.twitch{ background:#9146ff; }
+.social-btn.twitch:hover{ background:#a76bff; }
+
+@media (max-width:520px){
+  .header-inner{ align-items:flex-start; }
+  .header-meta, .author{ align-items:flex-start; }
+}
+
 /* --------------------------------------------------------------- pasek kontrolek */
 .toolbar{
   position:sticky; top:0; z-index:40;
