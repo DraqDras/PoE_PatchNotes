@@ -53,7 +53,7 @@ Dwujęzyczna (EN/PL) strona z patch notes **Path of Exile 3.29.0 — Curse of th
 - [x] 13. Player Changes (9)
 - [x] 14. Ascendancy Changes (11)
 - [x] 15. Passive Skill Tree Changes (5)
-- [ ] 16. Skill Gem Changes (140)
+- [x] 16. Skill Gem Changes (140)
 - [ ] 17. Vaal Gem Changes (8)
 - [ ] 18. Support Gem Changes (13)
 - [ ] 19. Unique Item Changes (49)
