@@ -102,6 +102,8 @@ body{
 .social-btn.youtube:hover{ background:#ff1f2e; }
 .social-btn.twitch{ background:#9146ff; }
 .social-btn.twitch:hover{ background:#a76bff; }
+.social-btn.discord{ background:#5865f2; }
+.social-btn.discord:hover{ background:#727df4; }
 
 @media (max-width:520px){
   .header-inner{ align-items:flex-start; }
