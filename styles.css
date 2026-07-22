@@ -191,7 +191,8 @@ main{
 .pn-table col.c-pl, .pn-table col.c-en{ width:50%; }
 
 .pn-table thead th{
-  position:sticky; top:var(--tb-h); z-index:20;
+  /* UWAGA: bez position:sticky — w Chromium sticky w tabeli z border-collapse:collapse
+     i overflow:hidden nakładał pasek nagłówka na tekst pierwszych wierszy. */
   background:#0a1011;
   text-align:left; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
   color:var(--muted); font-weight:600;
@@ -365,7 +366,7 @@ body.focus-en tr.subhead .pl .cell-text{ color:var(--dim); }
   /* kolumny jedna pod drugą */
   .pn-table, .pn-table thead, .pn-table tbody, .pn-table tr, .pn-table td, .pn-table th{ display:block; width:auto !important; }
   .pn-table col{ width:auto !important; }
-  .pn-table thead{ position:sticky; top:var(--tb-h); z-index:20; display:flex; }
+  .pn-table thead{ display:flex; }
   .pn-table thead th{ position:static; flex:1; }
   .pn-table tr{ border-top:1px solid var(--border); }
   .pn-table td.pl{ border-top:none; }
