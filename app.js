@@ -187,6 +187,80 @@
     toastTimer = setTimeout(function () { t.classList.remove("show"); }, 1400);
   }
 
+  /* ------------------------------------------------ wyszukiwarka / filtr */
+  // składanie znaków: małe litery + bez diakrytyków (ł osobno, bo nie rozkłada się w NFD)
+  function fold(s) {
+    return String(s).toLowerCase().replace(/ł/g, "l")
+      .normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  var searchIndex = []; // [{ row, sectionEl }]
+  function buildSearchIndex() {
+    searchIndex = [];
+    $$("#content .pn-section").forEach(function (sec) {
+      $$("tbody tr", sec).forEach(function (tr) {
+        var pl = tr.querySelector(".pl .cell-text");
+        var en = tr.querySelector(".en .cell-text");
+        tr._q = fold((pl ? pl.textContent : "") + "   " + (en ? en.textContent : ""));
+        searchIndex.push({ row: tr, sectionEl: sec });
+      });
+    });
+  }
+
+  function applyFilter(raw) {
+    var q = fold(String(raw || "").trim());
+    var countEl = $("#searchCount");
+    var clearBtn = $("#searchClear");
+    var sectionsWithHits = Object.create(null);
+    var hits = 0;
+
+    if (!q) {
+      searchIndex.forEach(function (it) { it.row.classList.remove("filtered-out"); });
+      $$("#content .pn-section").forEach(function (s) { s.classList.remove("filtered-out"); });
+      $$(".toc-row").forEach(function (r) { r.classList.remove("filtered-out"); });
+      $$("#sideList li").forEach(function (li) { li.classList.remove("filtered-out"); });
+      document.body.classList.remove("search-empty");
+      countEl.textContent = "";
+      countEl.classList.remove("none");
+      clearBtn.hidden = true;
+      return;
+    }
+
+    searchIndex.forEach(function (it) {
+      var match = it.row._q.indexOf(q) !== -1;
+      it.row.classList.toggle("filtered-out", !match);
+      if (match) { hits++; sectionsWithHits[it.sectionEl.id] = true; }
+    });
+
+    $$("#content .pn-section").forEach(function (s) {
+      s.classList.toggle("filtered-out", !sectionsWithHits[s.id]);
+    });
+    $$(".toc-row").forEach(function (r) {
+      r.classList.toggle("filtered-out", !sectionsWithHits[r.getAttribute("data-target")]);
+    });
+    $$("#sideList li").forEach(function (li) {
+      var a = li.querySelector("a");
+      var id = a ? a.getAttribute("href").slice(1) : "";
+      li.classList.toggle("filtered-out", !sectionsWithHits[id]);
+    });
+
+    var secCount = Object.keys(sectionsWithHits).length;
+    document.body.classList.toggle("search-empty", hits === 0);
+    countEl.classList.toggle("none", hits === 0);
+    countEl.textContent = hits === 0
+      ? "brak wyników"
+      : hits + " " + plural(hits, "wynik", "wyniki", "wyników") +
+        " w " + secCount + " " + plural(secCount, "sekcji", "sekcjach", "sekcjach");
+    clearBtn.hidden = false;
+  }
+
+  function plural(n, one, few, many) {
+    if (n === 1) return one;
+    var d10 = n % 10, d100 = n % 100;
+    if (d10 >= 2 && d10 <= 4 && (d100 < 12 || d100 > 14)) return few;
+    return many;
+  }
+
   /* ----------------------------------------------- oznaczanie komórek */
   function toggleMark(btn) {
     var cell = btn.closest(".cell");
@@ -324,6 +398,16 @@
     $("#swapBtn").addEventListener("click", swapColumns);
     $("#clearFocusBtn").addEventListener("click", function () { setFocus(null); });
 
+    // wyszukiwarka — filtrowanie w locie
+    var searchInput = $("#searchInput");
+    searchInput.addEventListener("input", function () { applyFilter(searchInput.value); });
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { searchInput.value = ""; applyFilter(""); }
+    });
+    $("#searchClear").addEventListener("click", function () {
+      searchInput.value = ""; applyFilter(""); searchInput.focus();
+    });
+
     // spis treści — klik / klawiatura w dowolnym wierszu
     var toc = $("#tocList");
     toc.addEventListener("click", function (e) {
@@ -356,6 +440,15 @@
     loadMarks();
     renderNav();
     renderSections();
+
+    // komunikat "brak wyników" (wewnątrz main, żeby dziedziczył szerokość i marginesy)
+    var nr = document.createElement("p");
+    nr.className = "no-results";
+    nr.id = "noResults";
+    nr.textContent = "Brak wyników dla podanej frazy. Możesz szukać zarówno po polsku, jak i po angielsku.";
+    $("#content").appendChild(nr);
+
+    buildSearchIndex();
     bindEvents();
     initScrollSpy();
 

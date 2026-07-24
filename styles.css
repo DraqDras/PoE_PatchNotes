@@ -139,7 +139,40 @@ body{
   background:transparent; border:1px solid var(--border); border-radius:7px; padding:6px 12px; transition:.15s;
 }
 .btn-ghost:hover{ color:var(--text); border-color:var(--accent); }
-.hint{ margin:0; color:var(--muted); font-size:.78rem; opacity:.8; }
+/* ---- wyszukiwarka (filtruje wiersze w locie) ---- */
+.search{ position:relative; display:flex; align-items:center; gap:8px; }
+.search-ico{
+  position:absolute; left:10px; top:50%; transform:translateY(-50%);
+  display:inline-flex; color:var(--muted); pointer-events:none;
+}
+.search-ico svg{ width:14px; height:14px; display:block; }
+#searchInput{
+  font:inherit; font-size:.85rem; color:var(--text);
+  background:rgba(12,17,19,.9); border:1px solid var(--border); border-radius:7px;
+  padding:7px 30px 7px 32px; width:clamp(200px, 26vw, 340px); transition:.15s;
+}
+#searchInput::placeholder{ color:var(--muted); opacity:.75; }
+#searchInput:hover{ border-color:var(--accent-dim); }
+#searchInput:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(67,198,180,.12); }
+.search-clear{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  width:20px; height:20px; padding:0; line-height:1; font-size:.78rem; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:transparent; color:var(--muted); border:none; border-radius:4px;
+}
+.search-clear:hover{ color:var(--bright); background:rgba(255,255,255,.06); }
+.search-count{ font-size:.78rem; color:var(--muted); white-space:nowrap; }
+.search-count.none{ color:var(--ember); }
+
+/* ukrywanie odfiltrowanych elementów */
+tr.filtered-out, .pn-section.filtered-out, .toc-row.filtered-out, #sideList li.filtered-out{ display:none; }
+/* komunikat gdy nic nie znaleziono */
+.no-results{
+  display:none; margin:26px 0; padding:18px 20px; text-align:center;
+  color:var(--muted); font-size:.92rem;
+  background:var(--panel); border:1px solid var(--border); border-radius:10px;
+}
+body.search-empty .no-results{ display:block; }
 
 /* ---------------------------------------------------------------- spis treści */
 .toc{
@@ -362,7 +395,8 @@ body.focus-en tr.subhead .pl .cell-text{ color:var(--dim); }
 }
 @media (max-width:820px){
   .site-header, .toolbar-inner, .toc, main{ padding-left:16px; padding-right:16px; }
-  .hint{ display:none; }
+  .search{ width:100%; }
+  #searchInput{ width:100%; }
   /* kolumny jedna pod drugą */
   .pn-table, .pn-table thead, .pn-table tbody, .pn-table tr, .pn-table td, .pn-table th{ display:block; width:auto !important; }
   .pn-table col{ width:auto !important; }
